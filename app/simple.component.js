@@ -28,7 +28,7 @@ System.register(["angular2/core"], function (exports_1, context_1) {
             SimpleComponent = __decorate([
                 core_1.Component({
                     selector: "simple-component",
-                    template: "\n <link rel=\"stylesheet\" type=\"text/css\"\nhref=\"https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css\">\n\n\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js\"></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js\"></script>\n<div class=\"ui container\">\n<h1>Hallo Angular 2!</h1>\n \n \n<div>\n            <label [hidden]=\"!isCalling\">name: {{name}}.</label>\n \n<div>\n                <input [(ngModel)]=\"name\" />\n                <button (click)=\"toggleCalling()\" class=\"ui button\">toggle Calling</button>\n \n<div>\n        </div>\n        \n        </div>\n \n        "
+                    templateUrl: './templates/simple.component.html',
                 })
             ], SimpleComponent);
             exports_1("SimpleComponent", SimpleComponent);
