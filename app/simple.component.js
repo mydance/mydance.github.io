@@ -1,4 +1,4 @@
-System.register(["angular2/core", "angular2/http"], function (exports_1, context_1) {
+System.register(["angular2/http", "angular2/core", "rxjs/add/operator/map"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -10,27 +10,31 @@ System.register(["angular2/core", "angular2/http"], function (exports_1, context
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, http_1, SimpleComponent;
+    var http_1, core_1, SimpleComponent;
     return {
         setters: [
+            function (http_1_1) {
+                http_1 = http_1_1;
+            },
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (http_1_1) {
-                http_1 = http_1_1;
+            function (_1) {
             }
         ],
         execute: function () {
             SimpleComponent = (function () {
                 function SimpleComponent(http) {
                     var _this = this;
-                    this.http = http;
                     this.club = "da";
                     this.nickname = true;
-                    http.get('http://itpointlab.cafe24.com/mydance/playlist')
+                    console.log(http);
+                    this.data = http.get('http://itpointlab.cafe24.com/mydance/playlist')
                         .map(function (res) { return res.json(); })
                         .subscribe(function (data) { return _this.data = data; }, function (err) { return console.log(err); }, function () { return _this.update(); });
                 }
+                SimpleComponent.prototype.toggleCalling = function () {
+                };
                 SimpleComponent.prototype.update = function () {
                     this.club = this.data.info.club;
                     console.log('Completed');
@@ -41,6 +45,7 @@ System.register(["angular2/core", "angular2/http"], function (exports_1, context
                 core_1.Component({
                     selector: "simple-component",
                     templateUrl: './templates/simple.component.html',
+                    providers: [],
                 }),
                 __metadata("design:paramtypes", [http_1.Http])
             ], SimpleComponent);
