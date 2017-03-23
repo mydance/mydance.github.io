@@ -15,7 +15,7 @@ export class SimpleComponent {
     constructor(http:Http) {
         console.log(http);
         
-        this.data = http.get('http://itpointlab.cafe24.com/mydance/playlist')
+        this.data = http.get('https://itpointlab.cafe24.com/mydance/playlist')
             .map(res => res.json())
             .subscribe(data => this.data = data,
                         err => console.log(err),

@@ -29,7 +29,7 @@ System.register(["angular2/http", "angular2/core", "rxjs/add/operator/map"], fun
                     this.club = "da";
                     this.nickname = true;
                     console.log(http);
-                    this.data = http.get('http://itpointlab.cafe24.com/mydance/playlist')
+                    this.data = http.get('https://itpointlab.cafe24.com/mydance/playlist')
                         .map(function (res) { return res.json(); })
                         .subscribe(function (data) { return _this.data = data; }, function (err) { return console.log(err); }, function () { return _this.update(); });
                 }
