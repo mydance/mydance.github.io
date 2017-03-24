@@ -35,7 +35,6 @@ System.register(["angular2/http", "angular2/core", "rxjs/add/operator/map", "rxj
                 function SimpleComponent(http) {
                     var _this = this;
                     this.interval = 2000;
-                    this.club = "da";
                     this.list = [];
                     console.log(http);
                     this.http = http;

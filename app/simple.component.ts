@@ -23,7 +23,7 @@ class Song  {
 export class SimpleComponent {
     
     interval = 2000;
-    club = "da";
+    club;
     nickname;
     data;
     http;
