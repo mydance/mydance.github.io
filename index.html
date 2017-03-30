@@ -1,20 +1,22 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>MyDance</title>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <script>document.write('<base href="' + document.location + '" />');</script>
+        
+        <!-- 0. Load styles  -->
         <link rel="stylesheet" type="text/css"
               href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
 
-        <!-- 1. Load libraries -->
-        <script src="node_modules/es6-shim/es6-shim.js"></script>
-        <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
-        <script src="node_modules/systemjs/dist/system.src.js"></script>
-        <script src="node_modules/rxjs/bundles/Rx.js"></script>
-        <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-        <script src="node_modules/angular2/bundles/http.dev.js"></script>
+        <!-- 1. Load libraries  -->
+        <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
+        <script src="https://unpkg.com/zone.js@0.8.4?main=browser"></script>
+        <script src="https://unpkg.com/systemjs@0.19.39/dist/system.src.js"></script>
+        <script src="systemjs.config.js"></script>
 
         <!-- 2. Configure SystemJS -->
         <script>
@@ -26,18 +28,24 @@
                     }
                 }
             });
-            System.import('app/boot').then(null, console.error.bind(console));
+            System.import('main.js').then(null, console.error.bind(console));
         </script>
     </head>
 
-    <!-- 3. Display the application -->
     <body>
         <div class="ui container">
-            <simple-component>
+            <main-component>
                 <div class="ui center aligned container">
                     <p>Loading...</p>
                 </div>
-            </simple-component>
+            </main-component>
         </div>
     </body>
 </html>
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

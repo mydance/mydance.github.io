@@ -1,7 +1,7 @@
-import {Http, HTTP_PROVIDERS} from 'angular2/http'
-import {Component} from "angular2/core";
-import 'rxjs/add/operator/map';
+import {Http} from '@angular/http';
+import {Component} from "@angular/core";
 import {Observable} from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
 
 class Song  {
     public album;
@@ -16,11 +16,11 @@ class Song  {
 }
     
 @Component({
-    selector: "simple-component",
-    templateUrl: './templates/simple.component.html',
+    selector: "main-component",
+    templateUrl: './templates/dj.component.html',
     providers: [],
 })
-export class SimpleComponent {
+export class DjComponent {
     
     interval = 2000;
     club;
