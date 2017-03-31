@@ -6,3 +6,4 @@ nbdist/
 .nb-gradle/
 node_modules/
 templates/
+app/
