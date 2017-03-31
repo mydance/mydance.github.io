@@ -12,6 +12,7 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var Rx_1 = require("rxjs/Rx");
 require("rxjs/add/operator/map");
+var mydance_1 = require("../mydance");
 var Song = (function () {
     function Song() {
     }
@@ -37,7 +38,8 @@ var UserComponent = (function () {
     };
     UserComponent.prototype.update = function () {
         this.club = this.data.info.club;
-        this.nickname = this.data.info.nickname;
+        //this.nickname = this.data.info.nickname;
+        this.nickname = mydance_1.MyDance.id;
         for (var i = 0; i < this.data.list.length; i++) {
             this.data.list[i].length = this.prettyTime(this.data.list[i].length);
         }
@@ -62,7 +64,7 @@ __decorate([
 UserComponent = __decorate([
     core_1.Component({
         selector: 'user-component',
-        template: "<h1>User Component</h1>",
+        template: "\n    <p></p>\n<h2 class=\"ui header\">{{club}}</h2>\n<div class=\"ui horizontal list\">\n    <div class=\"item\" >\n        <img src=\"/templates/images/avatar2/small/elyse.png\" class=\"ui mini circular image\">\n        <div class=\"content\">\n            <div class=\"ui sub header\">{{nickname}}</div>\n        </div>\n    </div>\n</div>\n<h4 class=\"ui horizontal divider blue header\">\n    Now\n</h4>\n<div class=\"ui items\" >\n    <div class=\"item\" >\n        <div class=\"content\" >\n            <div class=\"header\"><h1>{{now.title}}</h1></div>\n            <div class=\"meta\"><i class=\"user icon\"></i> {{now.artist}}</div>\n            <div class=\"meta\"><i class=\"browser icon\"></i> {{now.album}}</div>\n            <div class=\"meta\"><i class=\"sound icon\"></i> {{now.length}}</div>\n            <div class=\"meta\"><i class=\"heartbeat icon\"></i> {{now.bitrate}}</div>\n        </div>\n    </div>\n</div>\n\n<h4 class=\"ui horizontal divider header\">\n    Next\n</h4>\n\n<div class=\"ui divided items\" >\n    <div class=\"item\" *ngFor=\"let el of list; let i = index;\">\n         <div class=\"middle aligned content\">\n            <div class=\"ui grey header\">{{el.title}}</div>\n            <div class=\"meta\">\n                {{el.artist}}\n            </div>\n        </div>\n    </div>\n</div>\n\n<h4 class=\"ui horizontal hidden header\"></h4>\n\n<div class=\"ui center aligned container\">\n    <p style=\"color: #bbb\">Present by WEIRD</p>\n</div>\n<br/>\n    ",
         providers: [],
     }),
     __metadata("design:paramtypes", [http_1.Http])

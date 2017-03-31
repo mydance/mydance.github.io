@@ -7,12 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 // make all parts as one DYNAMIC_DIRECTIVES 
 var core_1 = require("@angular/core");
-var string_1 = require("./string");
-var text_1 = require("./text");
 var user_component_1 = require("./user.component");
+var list_component_1 = require("./list.component");
 exports.DYNAMIC_DIRECTIVES = [
-    core_1.forwardRef(function () { return string_1.StringEditor; }),
-    core_1.forwardRef(function () { return text_1.TextEditor; }),
+    core_1.forwardRef(function () { return list_component_1.ListComponent; }),
     core_1.forwardRef(function () { return user_component_1.UserComponent; })
 ];
 // module itself

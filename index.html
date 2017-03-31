@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Angular 2 QuickStart</title> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <title>MyDance</title> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 0. Load styles  -->
+        <link rel="stylesheet" type="text/css"
+              href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
 
-    <!-- 1. Load libraries -->
-     <!-- Polyfill(s) for older browsers -->
-    <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
+        <!-- 1. Load libraries -->
+        <!-- Polyfill(s) for older browsers -->
+        <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
 
-    <script src="https://unpkg.com/zone.js@0.6.21/dist/zone.js"></script>
-    <script src="https://unpkg.com/reflect-metadata@0.1.3"></script>
-    <script src="https://unpkg.com/systemjs@0.19.27/dist/system.src.js"></script>
+        <script src="https://unpkg.com/zone.js@0.6.21/dist/zone.js"></script>
+        <script src="https://unpkg.com/reflect-metadata@0.1.3"></script>
+        <script src="https://unpkg.com/systemjs@0.19.27/dist/system.src.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/lodash/4.11.1/lodash.min.js"></script>
-    <!-- 2. Configure SystemJS -->
-    <script src="systemjs.config.js"></script>
-    <script> 
-      System.import('app').catch(function(err){ console.error(err); });
-    </script>
-  </head>
+        <script src="https://cdn.jsdelivr.net/lodash/4.11.1/lodash.min.js"></script>
+        <!-- 2. Configure SystemJS -->
+        <script src="systemjs.config.js"></script>
+        <script>
+            System.import('app').catch(function (err) {
+                console.error(err);
+            });
+        </script>
+    </head>
 
-  <!-- 3. Display the application -->
-  <body>
-    <my-app>Loading...</my-app>
-  </body>
+    <!-- 3. Display the application -->
+    <body>
+        <div class="ui container">
+            <my-app>
+                <div class="ui center aligned container">
+                    Loading...
+                </div>
+            </my-app>
+        </div>
+
+    </body>
 </html>

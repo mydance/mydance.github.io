@@ -7,14 +7,7 @@ import { DynamicTemplateBuilder }               from './template.builder';
 
 @Component({
   selector: 'dynamic-detail',
-  template: `
-<div>
-  check/uncheck to use INPUT vs TEXTAREA:
-  <input type="checkbox" #val (click)="refreshContent(val.checked)" /><hr />
-  <div #dynamicContentPlaceHolder></div>  <hr />
-  entity: <pre>{{entity | json}}</pre>
-</div>
-`,
+  template: `<div #dynamicContentPlaceHolder></div>`,
 })
 export class DynamicDetail implements AfterViewInit, OnChanges, OnDestroy, OnInit
 { 
@@ -30,8 +23,7 @@ export class DynamicDetail implements AfterViewInit, OnChanges, OnDestroy, OnIni
     // example entity ... to be recieved from other app parts
     // this is kind of candiate for @Input
     protected entity = { 
-        code: "ABC123",
-        description: "A description of this Entity" 
+        code: "",
       };
 
     // wee need Dynamic component builder

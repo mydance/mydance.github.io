@@ -1,12 +1,10 @@
 // make all parts as one DYNAMIC_DIRECTIVES 
 import { forwardRef }   from '@angular/core';
-import { StringEditor } from './string';
-import { TextEditor }   from './text';
 import {UserComponent} from './user.component'
+import {ListComponent} from './list.component'
 
 export const DYNAMIC_DIRECTIVES = [
-  forwardRef(() => StringEditor),
-  forwardRef(() => TextEditor),
+  forwardRef(() => ListComponent),
   forwardRef(() => UserComponent)
 ];
 

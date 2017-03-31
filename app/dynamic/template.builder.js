@@ -6,19 +6,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
+var mydance_1 = require("../mydance");
 var DynamicTemplateBuilder = (function () {
     function DynamicTemplateBuilder() {
     }
     DynamicTemplateBuilder.prototype.prepareTemplate = function (entity, useTextarea) {
-        var properties = Object.keys(entity);
-        var template = "<form >";
-        var editorName = useTextarea
-            ? "text-editor"
-            : "user-component";
-        properties.forEach(function (propertyName) {
-            template += "\n          <" + editorName + "\n              [propertyName]=\"'" + propertyName + "'\"\n              [entity]=\"entity\"\n          ></" + editorName + ">";
-        });
-        return template + "</form>";
+        console.log(location);
+        var editorName = "list-component";
+        var id = location.search.split('?')[1];
+        if (id && id.length > 0) {
+            console.log(id);
+            mydance_1.MyDance.id = id;
+            editorName = "user-component";
+        }
+        var template = "<" + editorName + "></" + editorName + ">";
+        return template;
     };
     return DynamicTemplateBuilder;
 }());

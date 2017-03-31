@@ -21,8 +21,7 @@ var DynamicDetail = (function () {
         // example entity ... to be recieved from other app parts
         // this is kind of candiate for @Input
         this.entity = {
-            code: "ABC123",
-            description: "A description of this Entity"
+            code: "",
         };
     }
     /** Get a Factory and create a component */
@@ -78,7 +77,7 @@ __decorate([
 DynamicDetail = __decorate([
     core_1.Component({
         selector: 'dynamic-detail',
-        template: "\n<div>\n  check/uncheck to use INPUT vs TEXTAREA:\n  <input type=\"checkbox\" #val (click)=\"refreshContent(val.checked)\" /><hr />\n  <div #dynamicContentPlaceHolder></div>  <hr />\n  entity: <pre>{{entity | json}}</pre>\n</div>\n",
+        template: "<div #dynamicContentPlaceHolder></div>",
     }),
     __metadata("design:paramtypes", [type_builder_1.DynamicTypeBuilder,
         template_builder_1.DynamicTemplateBuilder])

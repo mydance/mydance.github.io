@@ -3,6 +3,7 @@ import { Http, URLSearchParams } from '@angular/http';
 import { Router, NavigationCancel } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+import {MyDance} from "../mydance";
 
 class Song  {
     public album;
@@ -18,7 +19,54 @@ class Song  {
 
 @Component({
     selector:'user-component',
-    template: `<h1>User Component</h1>`,
+    template: `
+    <p></p>
+<h2 class="ui header">{{club}}</h2>
+<div class="ui horizontal list">
+    <div class="item" >
+        <img src="/templates/images/avatar2/small/elyse.png" class="ui mini circular image">
+        <div class="content">
+            <div class="ui sub header">{{nickname}}</div>
+        </div>
+    </div>
+</div>
+<h4 class="ui horizontal divider blue header">
+    Now
+</h4>
+<div class="ui items" >
+    <div class="item" >
+        <div class="content" >
+            <div class="header"><h1>{{now.title}}</h1></div>
+            <div class="meta"><i class="user icon"></i> {{now.artist}}</div>
+            <div class="meta"><i class="browser icon"></i> {{now.album}}</div>
+            <div class="meta"><i class="sound icon"></i> {{now.length}}</div>
+            <div class="meta"><i class="heartbeat icon"></i> {{now.bitrate}}</div>
+        </div>
+    </div>
+</div>
+
+<h4 class="ui horizontal divider header">
+    Next
+</h4>
+
+<div class="ui divided items" >
+    <div class="item" *ngFor="let el of list; let i = index;">
+         <div class="middle aligned content">
+            <div class="ui grey header">{{el.title}}</div>
+            <div class="meta">
+                {{el.artist}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<h4 class="ui horizontal hidden header"></h4>
+
+<div class="ui center aligned container">
+    <p style="color: #bbb">Present by WEIRD</p>
+</div>
+<br/>
+    `,
     providers:[],
 })
 export class UserComponent {
@@ -53,7 +101,9 @@ export class UserComponent {
     
     update(){
         this.club = this.data.info.club;
-        this.nickname = this.data.info.nickname;
+        //this.nickname = this.data.info.nickname;
+        this.nickname = MyDance.id;
+        
         for (let i = 0; i < this.data.list.length; i++) {
             this.data.list[i].length = this.prettyTime(this.data.list[i].length);
         }
